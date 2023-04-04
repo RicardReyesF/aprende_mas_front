@@ -14,7 +14,7 @@ export default function FormRegisterLogin({children,titulo = ''}) {
         >
             <Grid item 
             xs={ 3 }
-            sx={{ backgroundColor: 'white', padding: 3, borderRadius: 2 }}
+            sx={{ backgroundColor: 'white', padding: 3, borderRadius: 2, width: { md: 450} }}
             >
                 <Typography variant='h5' sx={{ mb: 1 }}>{titulo}</Typography>
                 {children}

@@ -1,7 +1,6 @@
 import React from 'react'
 import FormRegisterLogin from '../Components/FormRegisterLogin'
-import { Grid, MenuItem, Select, TextField, InputLabel, FormControl, Button, Typography, Link } from '@mui/material'
-import { Google } from '@mui/icons-material'
+import { Grid, MenuItem, Select, TextField, InputLabel, FormControl, Button, Link } from '@mui/material'
 import { Link as LinkRouter } from 'react-router-dom'
 
 export const RegisterPage = () => {
@@ -50,33 +49,16 @@ export const RegisterPage = () => {
             </Grid>
             <Grid container 
                             spacing={2}
-                            sx={{ mb: 2 }}
+                            sx={{ mb: 2, mt: 1 }}
                             >
                             <Grid item 
-                            sx={{ mt: 2 }}
                             xs={ 12 }
-                            sm={ 6 }
                             >
                                 <Button 
                                 variant='contained'
                                 fullWidth
                                 >
-                                    Login
-                                </Button>
-                            </Grid>
-                            
-                            <Grid item 
-                            sx={{ mt: 2 }}
-                            xs={ 12 }
-                            sm={ 6 }
-                            >
-                                <Button 
-                                variant='contained'
-                                fullWidth
-                                
-                                >
-                                    <Google/>
-                                    <Typography sx={{ ml: 1 }}>Google</Typography>
+                                    Crear una cuenta
                                 </Button>
                             </Grid>
 
@@ -85,7 +67,7 @@ export const RegisterPage = () => {
                                 justifyContent="end"
                                 sx={{ mt: 2 }}
                             >
-                                <Link color='inherit' to='/register' component={ LinkRouter }>¿Ya tienes cuenta? Ingresa aqui.</Link>
+                                <Link color='inherit' to='/login' component={ LinkRouter }>¿Ya tienes cuenta? Ingresa aqui.</Link>
                             </Grid>
 
                         </Grid>
