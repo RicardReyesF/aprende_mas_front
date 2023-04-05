@@ -6,6 +6,7 @@ import { HomeLanding } from './Views/HomeLanding';
 import { HomePageUser } from './Views/HomePageUser';
 import { HomePageEditor } from './Views/HomePageEditor';
 import { AppTheme } from './Theme/AppTheme';
+import { HomePageAdmin } from './Views/HomePageAdmin';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
           <Route path='home-user' element={<HomePageUser/>} /> 
           <Route path='home-editor' element={<HomePageEditor/>} />
           
-          <Route path='home-admin' element={<HomePageEditor/>} />
+          <Route path='home-admin' element={<HomePageAdmin />} />
 
       
       </Routes>
