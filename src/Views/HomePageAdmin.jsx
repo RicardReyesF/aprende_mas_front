@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { useState } from 'react'
 import { NavBar } from '../Components/NavBar'
@@ -8,40 +9,40 @@ const drawerWidth = 240;
 export const HomePageAdmin = () => {
     const [ post, setPost] = useState({
         title: "",
-        img: "",
-        areas: ""
+        video: null,
     });
 
-    function handleOnChange(e){
-        setPost({
-            ...post,
-            [e.target.name] : e.target.value
+    const handleSubmit = async(e) => {
+        e.preventDefault()
+        const formData = new FormData()
+
+        formData.append('video', post.video)
+
+        const response = await axios.post('http://localhost:3001/new-video',formData,{
+            headers: {
+                "Content-Type" : "multipart/form-data"
+            }
         })
-        console.log(e.target.value)
+
+        console.log(response);
     }
 
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input  type="text" 
-                        name="name" 
+                        name="title" 
                         placeholder='nombre' 
-                        onChange={ handleOnChange }
+                        onChange={ (e) => setPost({...post, title: e.target.value}) }
                 
                 />
 
                 <input 
                         type="file" 
-                        name="img" 
+                        name="video" 
                         placeholder='seleccionar archivo'
-                        onChange={handleOnChange}
+                        onChange={(e) => setPost({...post, video: e.target.files[0]})}
                 />
-
-                <select name="areas" id="">
-                    <option value="RH">RH</option>
-                    <option value="Sistemas">Sistemas</option>
-                    <option value="Sistemas">Produccion</option>
-                </select>
 
                 <button>Subir</button>
 
